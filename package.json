@@ -1,0 +1,35 @@
+{
+  "name": "complete-me",
+  "version": "1.0.0",
+  "description": "Autocomplete project",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha --compilers js:babel-core/register test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rufusasterisk/complete-me.git"
+  },
+  "keywords": [
+    "autocomplete",
+    "trie"
+  ],
+  "author": "Rufus Welsh",
+  "license": "WTFPL",
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-core": "^6.22.1",
+    "babel-preset-env": "^1.1.8",
+    "babel-preset-es2015": "^6.22.0",
+    "chai": "^3.5.0",
+    "fs": "0.0.1-security",
+    "locus": "^2.0.1"
+  },
+  "bugs": {
+    "url": "https://github.com/rufusasterisk/complete-me/issues"
+  },
+  "homepage": "https://github.com/rufusasterisk/complete-me#readme"
+}
