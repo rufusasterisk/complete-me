@@ -17,24 +17,15 @@ describe('CompleteMe', function() {
   it('should accept a word', function() {
     let myComplete = new CompleteMe();
     myComplete.insert('dance');
-    // console.log(JSON.stringify(myComplete.children));
     expect(myComplete.count).to.eq(1);
     expect(myComplete.children.d.children.a.children.n.children.c.children.e.endWord).to.equal(1);
   })
-
-  // it.skip('should not duplicate nodes', function() {
-  //   let myComplete = new CompleteMe();
-  //   myComplete.insert('amber');
-  //   myComplete.insert('apple');
-  // expect(myComplete.a.wordsBelowThisNode).to.deep.eq(['amber', 'apple'])
-  // })
 
   it('should return suggestions', function() {
     let myComplete = new CompleteMe();
     myComplete.insert('apple');
     myComplete.insert('application');
     myComplete.insert('amber');
-    // console.log(myComplete.suggest('a'));
     expect(myComplete.suggest('a')).to.deep.eq(['apple', 'application', 'amber'])
   })
 
@@ -42,6 +33,16 @@ describe('CompleteMe', function() {
     let myComplete = new CompleteMe();
     myComplete.populate(dictionary);
     expect(myComplete.count).to.eq(dictionary.length)
-    console.log(JSON.stringify(myComplete.suggest('appl')));
+  })
+
+  it('should rank returned suggestions', function() {
+    let myComplete = new CompleteMe();
+    myComplete.insert('apple');
+    myComplete.insert('application');
+    myComplete.insert('amber');
+    myComplete.select('amber');
+    myComplete.select('application');
+    myComplete.select('application');
+    expect(myComplete.suggest('a')).to.deep.eq(['application', 'amber', 'apple'])
   })
 })
