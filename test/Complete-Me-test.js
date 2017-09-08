@@ -2,7 +2,6 @@ import { expect } from 'chai';
 import fs from 'fs'
 import Node from '../lib/Node';
 import CompleteMe from '../lib/Complete-Me';
-import locus from 'locus';
 const text = "/usr/share/dict/words"
 const dictionary = fs.readFileSync(text).toString().trim().split('\n')
 
